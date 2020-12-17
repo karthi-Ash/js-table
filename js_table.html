@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript-table</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-transform: capitalize;
+            font-family: "Montserrat";
+        }
+        body{
+            background: aquamarine;
+        }
+        .jstable{
+         position: absolute; 
+         transform: translate(-50%,-50%);
+         left: 50%;   
+         top: 50%;
+        } 
+        button{
+            padding: 1rem;
+            border: 2px solid lavender;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            background-color: darkblue;
+            color: palegoldenrod;
+        }
+        button:hover{
+            background: lightgreen;
+            transform: scale(1.1);
+            color: darkorchid;
+        }
+        table{
+            margin: 20px 50px;
+            border: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="jstable">
+    <button onclick="tableFuc()">click to generate the table</button>
+    <table id="myTable" border="1">
+    </table>
+    </div>
+
+    <script>
+        function tableFuc(){
+            rv=window.prompt('enter the how many no.of rows you wanted');
+            cv=window.prompt('enter the how many no.of columns you wanted');
+              for(var i=0;i<parseInt(rv);i++){
+                  var r=document.getElementById('myTable').insertRow(i);
+                   for(var j=0;j<parseInt(cv);j++){
+                       var c=r.insertCell(j);
+                       c.innerHTML="Row-"+i+"_"+"Col-"+j;
+                   } 
+              }
+        } 
+    </script>
+</body>
+</html>
